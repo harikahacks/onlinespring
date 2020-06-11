@@ -26,5 +26,11 @@ public class EmployeeService {
 		System.out.println(employeeHelper);
 		return employee;
 	}
+	public Employee getEmployeeById(int id) {
+//		System.out.println(employeeDAO);
+//		System.out.println(employeeHelper);
+		
+		return employeeDAO.getEmployeeById(id);
+	}
 
 }

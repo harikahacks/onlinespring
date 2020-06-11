@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -32,8 +33,10 @@ public class EmployeeController {
 	}
 	
 	@GetMapping(value = "/employee/{id}")
-	public String getEmployeeById(@PathVariable Integer id) {
-		return "Bhagya with id" + id;
+	public ResponseEntity<Employee> getEmployeeById(@PathVariable Integer id) {
+		//"Bhagya with id" + id;
+		return ResponseEntity.accepted()
+				.body(employeeService.getEmployeeById(id));
 	}
 		
 }
