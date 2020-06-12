@@ -1,6 +1,12 @@
 package com.google.demospring.department.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document
 public class Department {
+
+    @Id
     private int depId;
     private String depName;
     private int depStaff;
