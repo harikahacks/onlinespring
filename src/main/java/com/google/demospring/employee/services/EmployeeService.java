@@ -1,6 +1,7 @@
 package com.google.demospring.employee.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 import com.google.demospring.employee.dao.EmployeeDAO;
@@ -17,14 +18,20 @@ public class EmployeeService {
 	private EmployeeHelper employeeHelper;
 	
 	
+	
+	
 	public EmployeeService() {
 		System.out.println("EmployeeService");
 	}
 	
 	public Employee saveEmployee(Employee employee) {
-		System.out.println(employeeDAO);
-		System.out.println(employeeHelper);
-		return employee;
+		return this.employeeDAO.saveEmployee(employee);
+	}
+	public Employee getEmployeeById(int id) {
+//		System.out.println(employeeDAO);
+//		System.out.println(employeeHelper);
+		
+		return employeeDAO.getEmployeeById(id);
 	}
 
 }
